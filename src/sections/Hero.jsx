@@ -7,6 +7,7 @@ import { Leva } from "leva";
 import { useMediaQuery } from "react-responsive";
 import { calculateSizes } from "../constants/index.js";
 import { Target } from "../components/Target.jsx";
+
 import ReactLogo from "../components/ReactLogo.jsx";
 import Rings from "../components/Rings.jsx";
 import Cube from "../components/Cube.jsx";
@@ -40,6 +41,7 @@ const Hero = () => {
           <Suspense fallback={<CanvasLoader />}>
              {/* To hide controller */}
             <PerspectiveCamera makeDefault position={[0, 0, 30]} />
+            {/* for scroll motion on the hackerroom model */}
             <HeroCamera isMobile={isMobile}>
               <HackerRoom scale={sizes.deskScale} position={sizes.deskPosition} rotation={[0.1, -Math.PI, 0]} />
             </HeroCamera>
