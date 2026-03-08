@@ -38,6 +38,9 @@ const Hero = () => {
       <div className="w-full h-full absolute inset-0">
         <Leva   />
         <Canvas className="w-full h-full">
+          {/* what is the use of Suspense? */}
+          {/* Suspense is used to display a fallback UI while the 3D scene is loading */}
+          {/*in our case, it will display the CanvasLoader component while the 3D scene is loading */}
           <Suspense fallback={<CanvasLoader />}>
              {/* To hide controller */}
             <PerspectiveCamera makeDefault position={[0, 0, 30]} />
@@ -60,7 +63,7 @@ const Hero = () => {
         </Canvas>
       </div>
       <div className="absolute bottom-5 right-0 left-0 w-full z-10 c-space ">
-        <a href="#contact" className="w-fit">
+        <a href="#about" className="w-fit">
           <Button name="Let's work together" isBeam containerClass="sm:w-fit w-full sm:min-w-96" />
         </a>
       </div>
