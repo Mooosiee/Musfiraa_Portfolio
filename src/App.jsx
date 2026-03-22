@@ -4,6 +4,7 @@ import About from "./sections/About";
 import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
+import WorkExperience from "./sections/Experience";
 const App = () => {
   return (
     <main className="max-w-7xl mx-auto">
@@ -12,7 +13,7 @@ const App = () => {
       <About />
       <Projects />
       {/* Experience Section Left */}
-      
+      <WorkExperience/>
       <Contact/>
       <Footer/>
     </main>
