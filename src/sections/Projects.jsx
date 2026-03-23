@@ -24,7 +24,7 @@ const Projects = () => {
   // LiveSite is just derived from currentProject
   const LiveSite = !!currentProject.href;
   return (
-    <section className="c-space my-20">
+    <section className="c-space my-20" id="work">
       <p className="sm:text-4xl text-3xl font-semibold text-gray_gradient">
         My Work
       </p>

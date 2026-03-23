@@ -23,7 +23,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <p className="text-white-500"> Made with ❤️ By Musfiraa</p>
+      <p className="text-white-500"> Made with ❤️</p>
     </footer>
   );
 };
