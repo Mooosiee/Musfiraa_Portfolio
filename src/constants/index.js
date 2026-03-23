@@ -127,42 +127,37 @@ export const myProjects = [
     ],
   },
   {
-    title: "Voice-Based Community Support Platform",
-    desc: "A voice-driven community complaint and event analytics platform designed to allow users to submit voice-based complaints and track community issues efficiently.",
-    subdesc:
-      "Proposed as a hackathon project using a full-stack architecture with React, Flask, and MongoDB. Designed database schema, API architecture, and user interface flow to support scalable complaint logging and analytics.",
-    href: "#",
-    texture: "/textures/project/project3.mp4",
-    logo: "/assets/project-logo3.png",
-    logoStyle: {
-      backgroundColor: "#0E1F38",
-      border: "0.2px solid #0E2D58",
-      boxShadow: "0px 0px 60px 0px #2F67B64D",
-    },
-    spotlight: "/assets/spotlight3.png",
-    tags: [
-      // {
-      //   id: 1,
-      //   name: "React",
-      //   path: "/assets/react.svg",
-      // },
-      // {
-      //   id: 2,
-      //   name: "Flask",
-      //   path: "/assets/flask.png",
-      // },
-      // {
-      //   id: 3,
-      //   name: "MongoDB",
-      //   path: "/assets/mongodb.png",
-      // },
-      // {
-      //   id: 4,
-      //   name: "REST APIs",
-      //   path: "/assets/api.png",
-      // },
-    ],
+  title: "3D Developer Portfolio Website",
+  desc: "An interactive 3D portfolio website showcasing my projects, skills, and experience through immersive visuals and smooth animations.",
+  subdesc:
+    "Built using React, Three.js, and React Three Fiber, inspired by modern web design practices. Implemented 3D models, camera controls, and responsive UI to create an engaging user experience. Focused on performance optimization, component-based architecture, and clean UI/UX design.",
+  href: "#",
+  texture: "/textures/project/project3.mp4",
+  logo: "/assets/project-logo3.png",
+  logoStyle: {
+    backgroundColor: "#0E1F38",
+    border: "0.2px solid #0E2D58",
+    boxShadow: "0px 0px 60px 0px #2F67B64D",
   },
+  spotlight: "/assets/spotlight3.png",
+  tags: [
+    {
+      id: 1,
+      name: "React",
+      path: "/assets/react.svg",
+    },
+    {
+      id: 2,
+      name: "Three.js",
+      path: "/assets/threejs.png",
+    },
+    {
+      id: 3,
+      name: "Tailwind CSS",
+      path: "/assets/tailwindcss.png",
+    },
+  ],
+}
 ];
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
