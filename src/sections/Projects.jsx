@@ -18,8 +18,11 @@ const Projects = () => {
       }
     });
   };
-
+  
   const currentProject = myProjects[selectedProjectIndex];
+  // You don’t need useState at all
+  // LiveSite is just derived from currentProject
+  const LiveSite = !!currentProject.href;
   return (
     <section className="c-space my-20">
       <p className="sm:text-4xl text-3xl font-semibold text-gray_gradient">
@@ -51,6 +54,7 @@ const Projects = () => {
                 </div>
               ))}
             </div>
+            {LiveSite && (
             <a
               className="flex items-center gap-2 cursor-pointer text-white-600"
               href={currentProject.href}
@@ -62,7 +66,8 @@ const Projects = () => {
             >
               <p>Check Live Site</p>
               <img src="/assets/arrow-up.png" alt="arrow" className="w-3 h-3" />
-            </a>
+              </a>
+            )}
           </div>
             <div className="flex justify-between items-center mt-7">
             <button className="arrow-btn" onClick={() => handleNavigation('previous')}>
