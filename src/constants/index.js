@@ -157,6 +157,70 @@ export const myProjects = [
       path: "/assets/tailwindcss.png",
     },
   ],
+  },
+  {
+  title: "Trustworthy AI — Adversarial Attacks & Explainability",
+  desc: "A research-grade pipeline exploring vulnerabilities in deep learning image classifiers through adversarial attacks and AI explainability techniques.",
+  subdesc:
+    "Built with Python and PyTorch, implementing 6 attack methods (FGSM, PGD, C&W, DeepFool, Targeted, UAP) and 4 XAI techniques (GradCAM, Integrated Gradients, LIME, SHAP) across 5 pretrained CNN architectures. Includes a live Gradio interface, cross-model robustness benchmarking, and automated report generation.",
+  href: "https://github.com/lucifer4330k/Trustworthy-Artificial-Intelligence",
+  texture: "/textures/project/project4.mp4",
+  logo: "/assets/project-logo4.png",
+  logoStyle: {
+    backgroundColor: "#1A0E2E",
+    border: "0.2px solid #3B1F6A",
+    boxShadow: "0px 0px 60px 0px #6B3FBF4D",
+  },
+  spotlight: "/assets/spotlight4.png",
+  tags: [
+    {
+      id: 1,
+      name: "Python",
+      path: "/assets/python.svg",
+    },
+    {
+      id: 2,
+      name: "PyTorch",
+      path: "/assets/pytorch.png",
+    },
+    {
+      id: 3,
+      name: "Gradio",
+      path: "/assets/gradio.png",
+    },
+  ],
+  },
+  {
+  title: "Nova-X — 3D Obstacle Game",
+  desc: "An interactive 3D space-themed obstacle game where players control a rolling ball and navigate through dynamic challenges using real-time physics.",
+  subdesc:
+    "Built with React, Three.js (React Three Fiber), and Rapier physics, featuring smooth animations, collision handling, and immersive gameplay. Includes a modular component-based architecture, responsive controls, and optimized rendering for real-time performance.",
+  href: "https://github.com/Madhuri36/Nova-X",
+  texture: "/textures/project/project5.mp4",
+  logo: "/assets/project-logo5.png",
+  logoStyle: {
+    backgroundColor: "#0A1A2F",
+    border: "0.2px solid #1F3B6A",
+    boxShadow: "0px 0px 60px 0px #3F6BBF4D",
+  },
+  spotlight: "/assets/spotlight5.png",
+  tags: [
+    {
+      id: 1,
+      name: "React",
+      path: "/assets/react.svg",
+    },
+    {
+      id: 2,
+      name: "Three.js",
+      path: "/assets/threejs.png",
+    },
+    {
+      id: 3,
+      name: "Tailwind CSS",
+      path: "/assets/tailwindcss.png",
+    },
+  ],
 }
 ];
 
