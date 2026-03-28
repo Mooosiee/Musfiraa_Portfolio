@@ -1,30 +1,22 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-// import Alert from "../components/Alert";
-// import useAlert from '../hooks/useAlert.js';
-// service_s9qad9o
-// template_0rxjhg8
+
 const Contact = () => {
   const formRef = useRef();
-
-  //  const { alert, showAlert, hideAlert } = useAlert();
   const [loading, setLoading] = useState(false);
-
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   const handleChange = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
     try {
       await emailjs.send(
         "service_s9qad9o",
         "template_0rxjhg8",
-        // import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        // import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
           to_name: "Musfiraa",
@@ -33,107 +25,95 @@ const Contact = () => {
           message: form.message,
         },
         "RS5oewK_dwhBMRm_8",
-        // import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
       );
     } catch (error) {
       console.error(error);
+    } finally {
+      setLoading(false);
     }
-    //   .then(
-    //     () => {
-    //       setLoading(false);
-    //       showAlert({
-    //         show: true,
-    //         text: 'Thank you for your message :)',
-    //         type: 'success',
-    //   });
-
-    //       setTimeout(() => {
-    //         hideAlert(false);
-    //         setForm({
-    //           name: '',
-    //           email: '',
-    //           message: '',
-    //         });
-    //       }, [3000]);
-    //     },
-    //     (error) => {
-    //       setLoading(false);
-    //       console.error(error);
-
-    //       showAlert({
-    //         show: true,
-    //         text: "I didn't receive your message :/",
-    //         type: 'danger',
-    //       });
-    //     },
-    //   );
   };
 
   return (
     <section className="c-space my-20" id="contact">
-      {/* {alert.show && <Alert {...alert} />} */}
-      <div className="relative min-h-screen flex items-center justify-center flex-col ">
-        <img
-          src="/assets/terminal.png"
-          alt="terminal-bg"
-          className="absolute inset-0 min-h-screen"
-        />
-        <div className="max-w-xl relative z-10 sm:px-10 px-5 mt-12">
-          <h3 className="head-text mt-10">Let's Connect!</h3>
+      <div className="flex items-center justify-center">
+        <div className="w-full rounded-xl overflow-hidden shadow-2xl border border-white/10">
+          
+          {/* Terminal title bar */}
+          <div className="flex items-center gap-2 px-4 py-3 bg-[#1e1e1e] border-b border-white/10">
+            {/* Traffic lights */}
+            <span className="w-3 h-3 rounded-full bg-red-500" />
+            <span className="w-3 h-3 rounded-full bg-yellow-400" />
+            <span className="w-3 h-3 rounded-full bg-green-500" />
+          </div>
 
-          <form
-            ref={formRef}
-            onSubmit={handleSubmit}
-            className="mt-5 flex flex-col space-y-7"
-          >
-            <label className="space-y-2">
-              <span className="field-label">Full Name</span>
-              <input
-                type="text"
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                required
-                className="field-input"
-                placeholder=""
-              />
-            </label>
-            <label className="space-y-2">
-              <span className="field-label">Email address</span>
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                required
-                className="field-input"
-                placeholder=""
-              />
-            </label>
+          {/* Terminal body */}
+          <div className="bg-[#0d0d0d] px-6 sm:px-10 py-10">
+            {/* Fake terminal prompt line */}
+            <p className="font-mono text-green-400 text-sm mb-6">
+              <span className="text-white/40">~/musfiraa</span> $ send_message
+            </p>
 
-            <label className="space-y-2">
-              <span className="field-label">Your message</span>
-              <textarea
-                name="message"
-                value={form.message}
-                onChange={handleChange}
-                required
-                rows={5}
-                className="field-input"
-                placeholder="Share your thoughts or inquiries..."
-              />
-            </label>
+            <h3 className="head-text max-w-xl mx-auto">Let's Connect!</h3>
 
-            <button className="field-btn" type="submit" disabled={loading}>
-              {loading ? "Sending..." : "Send Message"}
+            <form 
+              ref={formRef}
+              onSubmit={handleSubmit}
+              className="mt-5 max-w-xl mx-auto flex flex-col space-y-7"
+            >
+              <label className="space-y-2">
+                <span className="field-label">Full Name</span>
+                <input
+                  type="text"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  required
+                  className="field-input"
+                  placeholder="ex., John Doe"
+                />
+              </label>
 
-              <img
-                src="/assets/arrow-up.png"
-                alt="arrow-up"
-                className="field-btn_arrow"
-              />
-            </button>
-          </form>
+              <label className="space-y-2">
+                <span className="field-label">Email address</span>
+                <input
+                  type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  required
+                  className="field-input"
+                  placeholder="ex., johndoe@gmail.com"
+                />
+              </label>
+
+              <label className="space-y-2">
+                <span className="field-label">Your message</span>
+                <textarea
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
+                  required
+                  rows={5}
+                  className="field-input"
+                  placeholder="Share your thoughts or inquiries..."
+                />
+              </label>
+
+              <button className="field-btn" type="submit" disabled={loading}>
+                {loading ? "Sending..." : "Send Message"}
+                <img
+                  src="/assets/arrow-up.png"
+                  alt="arrow-up"
+                  className="field-btn_arrow"
+                />
+              </button>
+            </form>
+
+            {/* Fake blinking cursor at bottom */}
+            <p className="font-mono text-white/80 text-sm mt-8">
+              <span className="text-green-400">$</span> <span className="animate-blink">|</span>
+            </p>
+          </div>
         </div>
       </div>
     </section>
